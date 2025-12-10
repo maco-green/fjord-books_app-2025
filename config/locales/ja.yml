@@ -1,0 +1,29 @@
+ja:
+  books:
+    index:
+      title: 書籍一覧
+      new_link: 新規登録
+    labels:
+      title: タイトル
+      memo: メモ
+      author: 著者
+      picture: 画像
+    links:
+      show: 詳細
+      back_to_index: 一覧に戻る
+    show:
+      edit_link: 編集
+      destroy_link: 削除
+    edit:
+      title: 編集
+      update_button: 更新
+    flash:
+      created: 新規作成しました。
+      updated: 更新しました。
+      destroyed: 削除しました。
+
+  helpers:
+    submit:
+      book:
+        create: 新規登録する
+        update: 更新する

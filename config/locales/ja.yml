@@ -1,13 +1,24 @@
 ja:
+  controllers:
+    common:
+      notice_create: "%{name}を作成しました。"
+      notice_update: "%{name}を更新しました。"
+      notice_destroy: "%{name}を削除しました。"
+
+  activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        title: タイトル
+        memo: メモ
+        author: 著者
+        picture: 画像
+
   books:
     index:
       title: 書籍一覧
       new_link: 新規登録
-    labels:
-      title: タイトル
-      memo: メモ
-      author: 著者
-      picture: 画像
     links:
       show: 詳細
       back_to_index: 一覧に戻る
@@ -17,10 +28,6 @@ ja:
     edit:
       title: 編集
       update_button: 更新
-    flash:
-      created: 新規作成しました。
-      updated: 更新しました。
-      destroyed: 削除しました。
 
   helpers:
     submit:

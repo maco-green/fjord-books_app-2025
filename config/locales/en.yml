@@ -28,15 +28,19 @@
 #       enabled: "ON"
 
 en:
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        title: Title
+        memo: Memo
+        author: Author
+        picture: Picture
   books:
     index:
       title: Books
       new_link: New Book
-    labels:
-      title: Title
-      memo: Memo
-      author: Author
-      picture: Picture
     links:
       show: Show This Book
       back_to_index: Back To Books
@@ -46,15 +50,13 @@ en:
     edit:
       title: Editing Book
       update_button: Update Book
-    flash:
-      created: Book was successfully created.
-      updated: Book was successfully updated.
-      destroyed: Book was successfully destroyed.
-
+  controllers:
+    common:
+      notice_create: "%{name} was successfully created."
+      notice_update: "%{name} was successfully updated."
+      notice_destroy: "%{name} was successfully destroyed."
   helpers:
     submit:
       book:
         create: Create Book
         update: Update Book
-
-

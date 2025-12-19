@@ -28,4 +28,35 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      book: Book
+    attributes:
+      book:
+        title: Title
+        memo: Memo
+        author: Author
+        picture: Picture
+  books:
+    index:
+      title: Books
+      new_link: New Book
+    links:
+      show: Show This Book
+      back_to_index: Back To Books
+    show:
+      edit_link: Edit This Book
+      destroy_link: Destroy This Book
+    edit:
+      title: Editing Book
+      update_button: Update Book
+  controllers:
+    common:
+      notice_create: "%{name} was successfully created."
+      notice_update: "%{name} was successfully updated."
+      notice_destroy: "%{name} was successfully destroyed."
+  helpers:
+    submit:
+      book:
+        create: Create Book
+        update: Update Book

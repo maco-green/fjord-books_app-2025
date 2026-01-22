@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t("views.auth.edit_user") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,12 +13,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i><%= t("views.auth.password_blank") %></i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= t("views.auth.password_minimum", count: @minimum_password_length) %></em>
     <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile %><br />
+    <%= f.text_area :profile %>
   </div>
 
   <div class="field">
@@ -27,17 +42,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i><%= t("views.auth.current_password_hint") %></i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit t("helpers.submit.update") %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3><%= t("views.auth.cancel_account_title") %></h3>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+<div><%= t("views.auth.unhappy") %><%= button_to t("views.auth.cancel_account"), registration_path(resource_name), data: { confirm: t("views.auth.are_you_sure"), turbo_confirm: t("views.auth.are_you_sure") }, method: :delete %></div>
 
-<%= link_to "Back", :back %>
+<%= link_to t("views.auth.back"), :back %>

@@ -1,0 +1,25 @@
+<h1><%= t("views.auth.user") %></h1>
+
+<p>
+  <strong><%= t("activerecord.attributes.user.email") %>：</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.user.postal_code") %>：</strong>
+  <%= @user.postal_code.presence || "-" %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.user.address") %>：</strong>
+  <%= @user.address.presence || "-" %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.user.profile") %>：</strong><br>
+  <%= simple_format(@user.profile.presence || "-") %>
+</p>
+
+<p>
+  <%= link_to t("views.auth.back"), users_path %>
+</p>

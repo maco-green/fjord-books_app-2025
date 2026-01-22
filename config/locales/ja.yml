@@ -1,6 +1,12 @@
 ---
 ja:
   activerecord:
+    attributes:
+      user:
+        email: Eメール
+        postal_code: 郵便番号
+        address: 住所
+        profile: 自己紹介
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -207,6 +213,25 @@ ja:
       logout: "ログアウト"
       sign_up: "新規登録"
       login: "ログイン"
+      forgot_password: "パスワードを忘れた方はこちら"
+      cancel_account_title: "アカウント削除"
+      cancel_account: "アカウントを削除する"
+      unhappy: "退会しますか？"
+      are_you_sure: "よろしいですか？"
+      back: "戻る"
+      edit_user: "ユーザー編集"
+      users: "ユーザー一覧"
+      user: "ユーザー"
+      password_blank: "（変更しない場合は空欄のままにしてください）"
+      password_minimum: "（%{count}文字以上）"
+      current_password_hint: "（変更を確定するために現在のパスワードが必要です）"
+      forgot_password_title: "再設定メールを送信"
+      send_reset_password: "パスワード再設定メールを送信する"
+      change_your_password: "パスワード再設定"
+      change_password_title: "パスワードを再設定"
+      new_password: "新しいパスワード"
+      confirm_password: "パスワード（確認用）"
+      change_password: "パスワードを変更する"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

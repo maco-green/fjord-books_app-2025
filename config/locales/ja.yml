@@ -1,6 +1,9 @@
 ---
 ja:
   activerecord:
+    attributes:
+      user:
+        icon: アイコン
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -217,3 +220,4 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+        icon: "アイコン"

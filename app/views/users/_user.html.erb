@@ -5,6 +5,10 @@
     <%= user.email %>
   </p>
 
+  <% if user.icon.attached? %>
+    <%= image_tag user.icon.variant(resize_to_limit: [100, 100]).processed %>
+  <% end %>
+
   <p>
     <strong><%= User.human_attribute_name(:name) %>:</strong>
     <%= user.name %>

@@ -13,8 +13,6 @@
   <% end %>
 
   <%= render 'devise/registrations/profile_fields', f: f %>
-  <%= f.label :icon ,t('devise.registrations.edit.icon') %><br />
-  <%= f.file_field :icon %>
 
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />

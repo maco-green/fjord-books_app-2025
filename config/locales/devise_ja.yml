@@ -1,0 +1,9 @@
+ja:
+  devise:
+    mailer:
+      reset_password_instructions:
+        greeting: "%{recipient} さん、こんにちは！"
+        instruction: "パスワードを変更するためのリンクがリクエストされました。以下のリンクから変更できます。"
+        action: "パスワードを変更する"
+        instruction_2: "もしあなたがこれをリクエストしていないなら、このメールを無視してください"
+        instruction_3: "上のリンクにアクセスするまで、パスワードは変更されません"

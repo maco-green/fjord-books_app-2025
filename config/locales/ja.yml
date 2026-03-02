@@ -1,6 +1,12 @@
 ---
 ja:
   activerecord:
+    attributes:
+      report:
+        title: "タイトル"
+        body: "本文"
+    models:
+      report: "日報"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -170,6 +176,16 @@ ja:
     precision:
       format:
         delimiter: ''
+  reports:
+    edit:
+      title: "日報の編集"
+    index:
+      title: "日報一覧"
+    new:
+      title: "日報の新規作成"
+    report:
+      title: "タイトル："
+      body: "本文："
   support:
     array:
       last_word_connector: "、"
@@ -208,6 +224,9 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    reports:
+      correct_user:
+        notice: "日報の作成者のみ編集が可能です"
   layouts:
     application:
       menu: メニュー

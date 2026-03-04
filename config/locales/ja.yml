@@ -2,11 +2,16 @@
 ja:
   activerecord:
     attributes:
+      comment:
+        user: "ユーザー："
+        body: "コメント："
+        time: "投稿日時："
       report:
         title: "タイトル"
         body: "本文"
     models:
       report: "日報"
+      comment: "コメント"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -220,6 +225,9 @@ ja:
       next: '次 ›'
       truncate: '…'
   controllers:
+    comments:
+      correct_user:
+        notice: "コメントの投稿者のみ削除が可能です"
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"

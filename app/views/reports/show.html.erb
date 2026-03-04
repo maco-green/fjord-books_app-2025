@@ -1,5 +1,8 @@
 <%= render @report %>
 
+<%= render @report.comments, commentable: @commentable %>
+<%= render 'comments/form', comment: Comment.new, commentable: @commentable %>
+
 <div>
   <%= link_to t('views.common.title_edit' ,name: Report.model_name.human.downcase), edit_report_path(@report) %> |
   <%= link_to t('views.common.back' ,name: Report.model_name.human.downcase), reports_path %>

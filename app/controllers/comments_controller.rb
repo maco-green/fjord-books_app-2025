@@ -1,7 +1,8 @@
-class CommentsController < ApplicationController
+# frozen_string_literal: true
 
-before_action :set_commentable
-before_action :correct_user, only: %i[destroy]
+class CommentsController < ApplicationController
+  before_action :set_commentable
+  before_action :correct_user, only: %i[destroy]
 
   def create
     @comment = Comment.new(comment_params)
@@ -21,7 +22,6 @@ before_action :correct_user, only: %i[destroy]
     redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
-
   private
 
   def comment_params
@@ -40,5 +40,4 @@ before_action :correct_user, only: %i[destroy]
     @comment = Comment.find(params[:id])
     redirect_to @commentable, notice: t('controllers.comments.correct_user.notice') unless @comment.user == current_user
   end
-
 end

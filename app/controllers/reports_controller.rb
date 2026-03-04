@@ -28,7 +28,7 @@ class ReportsController < ApplicationController
     @report.user = current_user
 
     if @report.save
-      redirect_to @report, notice: t('controllers.common.notice_create',name: Report.model_name.human)
+      redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class ReportsController < ApplicationController
   # PATCH/PUT /reports/1
   def update
     if @report.update(report_params)
-      redirect_to @report, notice: t('controllers.common.notice_update',name: Report.model_name.human)
+      redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +46,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   def destroy
     @report.destroy!
-    redirect_to reports_path, status: :see_other, notice: t('controllers.common.notice_destroy',name: Report.model_name.human)
+    redirect_to reports_path, status: :see_other, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private

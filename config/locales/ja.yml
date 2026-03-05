@@ -204,6 +204,9 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   views:
+    books:
+      show:
+        no_comments: "コメントは0件です"
     common:
       show: "この%{name}を表示"
       edit: "この%{name}を編集"
@@ -224,6 +227,9 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+    reports:
+      show:
+        no_comments: "コメントは0件です"
   controllers:
     comments:
       correct_user:

@@ -4,7 +4,11 @@
   <%= render @book %>
 </div>
 
-<%= render @book.comments, commentable: @commentable %>
+<% if @book.comments.empty? %>
+  <%= t('views.books.show.no_comments') %>
+<% else %>
+  <%= render @book.comments, commentable: @commentable %>
+<% end %>
 
 <%= render 'comments/form', comment: Comment.new, commentable: @commentable %>
 

@@ -1,6 +1,11 @@
 <%= render @report %>
 
-<%= render @report.comments, commentable: @commentable %>
+<% if @report.comments.empty? %>
+  <%= t('views.reports.show.no_comments') %>
+<% else %>
+  <%= render @report.comments, commentable: @commentable %>
+<% end %>
+
 <%= render 'comments/form', comment: Comment.new, commentable: @commentable %>
 
 <div>

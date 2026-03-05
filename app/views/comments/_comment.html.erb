@@ -2,7 +2,7 @@
 
   <p>
     <strong><%= t('activerecord.attributes.comment.user') %></strong>
-    <%= comment.user.name.presence || comment.user.email %>
+    <%= comment.user&.name&.presence || comment.user&.email %>
     <strong><%= t('activerecord.attributes.comment.time') %></strong>
     <%= comment.created_at %>
     <strong><%= t('activerecord.attributes.comment.body') %></strong>

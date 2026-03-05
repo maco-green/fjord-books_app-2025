@@ -10,6 +10,13 @@
   </p>
 
 </div>
+
+<nav class="page-nav">
+  <% if comment.user == current_user %>
+    <%= link_to t('views.common.edit', name: Comment.model_name.human.downcase), edit_polymorphic_path([commentable, comment]) %>
+  <% end %>
+</nav>
+
 <nav class="page-nav">
   <% if comment.user == current_user %>
     <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase), polymorphic_path([commentable, comment]), method: :delete %>

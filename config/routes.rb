@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'books#index'
   resources :books do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :edit, :update]
   end
   resources :users, only: %i(index show)
   resources :reports do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :edit, :update]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

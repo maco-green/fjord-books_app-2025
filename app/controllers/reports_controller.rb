@@ -63,6 +63,10 @@ class ReportsController < ApplicationController
 
   def correct_user
     @report = Report.find(params[:id])
-    redirect_to reports_path, notice: t('controllers.reports.correct_user.notice') unless @report.user == current_user
+    if params[:action] == 'destroy'
+      redirect_to reports_path, notice: t('controllers.reports.correct_user.destroy') unless @report.user == current_user
+    else
+      redirect_to reports_path, notice: t('controllers.reports.correct_user.notice') unless @report.user == current_user
+    end
   end
 end

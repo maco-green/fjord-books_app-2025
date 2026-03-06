@@ -245,6 +245,7 @@ ja:
     reports:
       correct_user:
         notice: "日報の作成者のみ編集が可能です"
+        destroy: "日報の作成者のみ削除が可能です"
   layouts:
     application:
       menu: メニュー

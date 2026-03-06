@@ -207,6 +207,10 @@ ja:
     books:
       show:
         no_comments: "コメントは0件です"
+    comments:
+      edit:
+        title: "コメントの編集"
+        editing_comment: "コメント編集"
     common:
       show: "この%{name}を表示"
       edit: "この%{name}を編集"

@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: %i[edit update destroy]
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
+    @comment = current_user.comments.new(comment_params)
     @comment.commentable = @commentable
 
     if @comment.save

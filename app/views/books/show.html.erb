@@ -7,10 +7,10 @@
 <% if @book.comments.empty? %>
   <%= t('views.books.show.no_comments') %>
 <% else %>
-  <%= render @book.comments, commentable: @commentable %>
+  <%= render @book.comments, commentable: @book %>
 <% end %>
 
-<%= render 'comments/form', comment: Comment.new, commentable: @commentable %>
+<%= render 'comments/form', comment: Comment.new, commentable: @book %>
 
 <nav class="page-nav">
   <%= link_to t('views.common.edit', name: Book.model_name.human.downcase), edit_book_path(@book) %> |

@@ -5,7 +5,7 @@
 </div>
 
 <% if @book.comments.order(:created_at).empty? %>
-  <%= t('views.books.show.no_comments') %>
+  <%= t('views.common.no_comments') %>
 <% else %>
   <%= render @book.comments.order(:created_at) %>
 <% end %>

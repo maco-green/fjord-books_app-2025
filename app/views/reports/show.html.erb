@@ -1,7 +1,7 @@
 <%= render @report %>
 
 <% if @report.comments.order(:created_at).empty? %>
-  <%= t('views.reports.show.no_comments') %>
+  <%= t('views.common.no_comments') %>
 <% else %>
   <%= render @report.comments.order(:created_at) %>
 <% end %>

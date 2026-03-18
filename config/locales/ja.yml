@@ -198,9 +198,6 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   views:
-    books:
-      show:
-        no_comments: "コメントは0件です"
     comments:
       edit:
         title: "コメントの編集"
@@ -219,15 +216,13 @@ ja:
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
       title_show: "%{name}の詳細"
       sign_out: ログアウト
+      no_comments: "コメントはありません"
     pagination:
       first: '« 最初'
       last: '最後 »'
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
-    reports:
-      show:
-        no_comments: "コメントは0件です"
   controllers:
     comments:
       correct_user:

@@ -1,11 +1,11 @@
 <div id="<%= dom_id comment %>">
 
   <p>
-    <strong><%= t('activerecord.attributes.comment.user') %></strong>
+    <strong><%= t('activerecord.attributes.comment.user') %>：</strong>
     <%= comment.user&.name&.presence || comment.user&.email %>
-    <strong><%= t('activerecord.attributes.comment.time') %></strong>
+    <strong><%= t('activerecord.attributes.comment.time') %>：</strong>
     <%= l comment.created_at, format: :long %>
-    <strong><%= t('activerecord.attributes.comment.body') %></strong>
+    <strong><%= t('activerecord.attributes.comment.body') %>：</strong>
     <%= comment.body %>
   </p>
 

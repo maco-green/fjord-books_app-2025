@@ -3,9 +3,9 @@ ja:
   activerecord:
     attributes:
       comment:
-        user: "ユーザー："
-        body: "コメント："
-        time: "投稿日時："
+        user: "ユーザー"
+        body: "コメント"
+        time: "投稿日時"
       report:
         title: "タイトル"
         body: "本文"
@@ -189,8 +189,8 @@ ja:
     new:
       title: "日報の新規作成"
     report:
-      title: "タイトル："
-      body: "本文："
+      title: "タイトル"
+      body: "本文"
   support:
     array:
       last_word_connector: "、"

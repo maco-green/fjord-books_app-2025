@@ -1,6 +1,6 @@
 <% content_for :title, "New report" %>
 
-<h1><%= t('reports.new.title') %></h1>
+<h1><%= t('views.common.new', name: Report.model_name.human) %></h1>
 
 <%= render "form", report: @report %>
 

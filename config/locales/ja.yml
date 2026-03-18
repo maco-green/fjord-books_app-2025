@@ -182,12 +182,6 @@ ja:
       format:
         delimiter: ''
   reports:
-    edit:
-      title: "日報の編集"
-    index:
-      title: "日報一覧"
-    new:
-      title: "日報の新規作成"
     report:
       title: "タイトル"
       body: "本文"

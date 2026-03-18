@@ -1,6 +1,6 @@
 <% content_for :title, "Reports" %>
 
-<h1><%= t('.title') %></h1>
+<h1><%= t('views.common.title_index', name: Report.model_name.human) %></h1>
 
 <div id="reports">
   <% @reports.each do |report| %>

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
-  before_action :correct_user, only: %i[edit update destroy]
+  before_action :set_report, only: %i[show]
+  before_action :set_report_for_owner, only: %i[edit update destroy]
 
   # GET /reports
   def index
@@ -54,17 +54,12 @@ class ReportsController < ApplicationController
     @report = Report.find(params.expect(:id))
   end
 
+  def set_report_for_owner
+    @report = current_user.reports.find(params.expect(:id))
+  end
+
   # Only allow a list of trusted parameters through.
   def report_params
     params.expect(report: %i[title body])
-  end
-
-  def correct_user
-    @report = Report.find(params[:id])
-    if params[:action] == 'destroy'
-      redirect_to reports_path, notice: t('controllers.reports.correct_user.destroy') unless @report.user == current_user
-    else
-      redirect_to reports_path, notice: t('controllers.reports.correct_user.notice') unless @report.user == current_user
-    end
   end
 end

@@ -3,7 +3,7 @@
 <% if @report.comments.order(:created_at).empty? %>
   <%= t('views.reports.show.no_comments') %>
 <% else %>
-  <%= render @report.comments.order(:created_at), commentable: @report %>
+  <%= render @report.comments.order(:created_at) %>
 <% end %>
 
 <%= render 'comments/form', comment: Comment.new, commentable: @report %>

@@ -7,7 +7,7 @@
 <% if @book.comments.order(:created_at).empty? %>
   <%= t('views.books.show.no_comments') %>
 <% else %>
-  <%= render @book.comments.order(:created_at), commentable: @book %>
+  <%= render @book.comments.order(:created_at) %>
 <% end %>
 
 <%= render 'comments/form', comment: Comment.new, commentable: @book %>

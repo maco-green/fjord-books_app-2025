@@ -242,6 +242,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_error: "コメントを入力してください"
     reports:
       correct_user:
         notice: "日報の作成者のみ編集が可能です"

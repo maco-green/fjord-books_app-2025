@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CommentsController < ApplicationController
+class Books::CommentsController < ApplicationController
   before_action :set_commentable
   before_action :set_comment, only: %i[edit update destroy]
 
@@ -41,10 +41,6 @@ class CommentsController < ApplicationController
   end
 
   def set_commentable
-    if params[:book_id]
-      @commentable = Book.find(params[:book_id])
-    elsif params[:report_id]
-      @commentable = Report.find(params[:report_id])
-    end
+    @commentable = Book.find(params[:book_id])
   end
 end

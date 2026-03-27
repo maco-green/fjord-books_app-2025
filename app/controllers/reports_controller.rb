@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show]
   before_action :set_report_for_owner, only: %i[edit update destroy]
 
   # GET /reports
@@ -10,7 +9,9 @@ class ReportsController < ApplicationController
   end
 
   # GET /reports/1
-  def show; end
+  def show
+    @report = Report.find(params.expect(:id))
+  end
 
   # GET /reports/new
   def new
@@ -48,11 +49,6 @@ class ReportsController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_report
-    @report = Report.find(params.expect(:id))
-  end
 
   def set_report_for_owner
     @report = current_user.reports.find(params.expect(:id))

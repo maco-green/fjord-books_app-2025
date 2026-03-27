@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 class Books::CommentsController < ApplicationController
-  before_action :set_commentable
+  before_action :set_book
   before_action :set_comment, only: %i[edit update destroy]
 
   def create
     @comment = current_user.comments.new(comment_params)
-    @comment.commentable = @commentable
+    @comment.commentable = @book
 
     if @comment.save
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+      redirect_to @book, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: t('controllers.common.notice_error')
+      redirect_to @book, alert: t('controllers.common.notice_error')
     end
   end
 
@@ -19,7 +19,7 @@ class Books::CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+      redirect_to @book, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class Books::CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    redirect_to @book, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
@@ -40,7 +40,7 @@ class Books::CommentsController < ApplicationController
     params.expect(comment: [:body])
   end
 
-  def set_commentable
-    @commentable = Book.find(params[:book_id])
+  def set_book
+    @book = Book.find(params[:book_id])
   end
 end

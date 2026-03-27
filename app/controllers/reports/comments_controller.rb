@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 class Reports::CommentsController < ApplicationController
-  before_action :set_commentable
+  before_action :set_report
   before_action :set_comment, only: %i[edit update destroy]
 
   def create
     @comment = current_user.comments.new(comment_params)
-    @comment.commentable = @commentable
+    @comment.commentable = @report
 
     if @comment.save
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+      redirect_to @report, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      redirect_to @commentable, alert: t('controllers.common.notice_error')
+      redirect_to @report, alert: t('controllers.common.notice_error')
     end
   end
 
@@ -19,7 +19,7 @@ class Reports::CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+      redirect_to @report, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class Reports::CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    redirect_to @report, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
@@ -40,7 +40,7 @@ class Reports::CommentsController < ApplicationController
     params.expect(comment: [:body])
   end
 
-  def set_commentable
-    @commentable = Report.find(params[:report_id])
+  def set_report
+    @report = Report.find(params[:report_id])
   end
 end

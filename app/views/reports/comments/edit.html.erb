@@ -1,0 +1,11 @@
+<% content_for :title, t('views.comments.edit.editing_comment') %>
+
+<h1><%= t('views.comments.edit.title') %></h1>
+
+<%= render 'comments/form', comment: @comment, commentable: @comment.commentable %>
+
+<br>
+
+<div>
+  <%= link_to t('views.common.back' ,name: Comment.model_name.human.downcase), @comment.commentable %>
+</div>

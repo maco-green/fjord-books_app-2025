@@ -126,6 +126,8 @@ ja:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
   helpers:
+    comments:
+      withdrawn_user: "（退会したユーザー）"
     select:
       prompt: 選択してください
     submit:

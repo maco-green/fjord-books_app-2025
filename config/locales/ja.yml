@@ -222,18 +222,11 @@ ja:
       next: '次 ›'
       truncate: '…'
   controllers:
-    comments:
-      correct_user:
-        notice: "コメントの投稿者のみ削除が可能です"
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
       notice_error: "コメントを入力してください"
-    reports:
-      correct_user:
-        notice: "日報の作成者のみ編集が可能です"
-        destroy: "日報の作成者のみ削除が可能です"
   layouts:
     application:
       menu: メニュー

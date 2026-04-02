@@ -8,11 +8,8 @@ class Books::CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.commentable = @book
 
-    if @comment.save
-      redirect_to @book, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
-    else
-      redirect_to @book, alert: t('controllers.common.notice_error')
-    end
+    @comment.save!
+    redirect_to @book, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
   def edit; end

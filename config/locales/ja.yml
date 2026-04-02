@@ -200,10 +200,6 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   views:
-    comments:
-      edit:
-        title: "コメントの編集"
-        editing_comment: "コメント編集"
     common:
       show: "この%{name}を表示"
       edit: "この%{name}を編集"

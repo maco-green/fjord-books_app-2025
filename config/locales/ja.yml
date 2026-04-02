@@ -215,8 +215,6 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       no_comments: "コメントはありません"
-    reports:
-      error: "以下のエラーがあります"
     pagination:
       first: '« 最初'
       last: '最後 »'

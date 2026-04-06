@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report_for_owner, only: %i[edit update destroy]
+  before_action :set_report, only: %i[edit update destroy]
 
   # GET /reports
   def index
@@ -50,7 +50,7 @@ class ReportsController < ApplicationController
 
   private
 
-  def set_report_for_owner
+  def set_report
     @report = current_user.reports.find(params.expect(:id))
   end
 

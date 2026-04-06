@@ -2,7 +2,7 @@
 
   <p>
     <strong><%= t('activerecord.attributes.comment.user') %>：</strong>
-    <%= comment_user_name(comment) %>
+    <%= display_user_name(comment.user) %>
     <strong><%= t('activerecord.attributes.comment.time') %>：</strong>
     <%= l comment.created_at, format: :long %>
     <strong><%= t('activerecord.attributes.comment.body') %>：</strong>

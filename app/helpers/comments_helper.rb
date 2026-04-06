@@ -2,6 +2,10 @@
 
 module CommentsHelper
   def comment_user_name(comment)
-    comment.user&.name.presence || comment.user&.email || t('helpers.comments.withdrawn_user')
+    if comment.user
+      comment.user.name.presence || comment.user.email
+    else
+      t('helpers.comments.withdrawn_user')
+    end
   end
 end

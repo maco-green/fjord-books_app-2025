@@ -15,11 +15,8 @@ class Reports::CommentsController < ApplicationController
   def edit; end
 
   def update
-    if @comment.update(comment_params)
-      redirect_to @report, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @comment.update!(comment_params)
+    redirect_to @report, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
   end
 
   def destroy

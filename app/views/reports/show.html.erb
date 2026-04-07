@@ -1,0 +1,22 @@
+<%= render @report %>
+
+<% if @report.comments.order(:created_at).empty? %>
+  <%= t('views.common.no_comments') %>
+<% else %>
+  <%= render @report.comments.order(:created_at) %>
+<% end %>
+
+<%= render 'comments/form', comment: Comment.new, commentable: @report %>
+
+<nav class="page-nav">
+  <% if @report.user == current_user %>
+    <%= link_to t('views.common.title_edit' ,name: Report.model_name.human.downcase), edit_report_path(@report) %> |
+  <% end %>
+  <%= link_to t('views.common.back' ,name: Report.model_name.human.downcase), reports_path %>
+</nav>
+
+<nav class="page-nav">
+  <% if @report.user == current_user %>
+    <%= button_to t('views.common.destroy' ,name: Report.model_name.human.downcase), @report, method: :delete %>
+  <% end %>
+</nav>

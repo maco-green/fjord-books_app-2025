@@ -1,6 +1,17 @@
 ---
 ja:
   activerecord:
+    attributes:
+      comment:
+        user: "ユーザー"
+        body: "コメント"
+        time: "投稿日時"
+      report:
+        title: "タイトル"
+        body: "本文"
+    models:
+      report: "日報"
+      comment: "コメント"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -115,6 +126,8 @@ ja:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
   helpers:
+    comments:
+      withdrawn_user: "（退会したユーザー）"
     select:
       prompt: 選択してください
     submit:
@@ -170,6 +183,10 @@ ja:
     precision:
       format:
         delimiter: ''
+  reports:
+    report:
+      title: "タイトル"
+      body: "本文"
   support:
     array:
       last_word_connector: "、"
@@ -197,6 +214,7 @@ ja:
       validation_error: "%{errors}があるため、この%{name}は保存できませんでした"
       title_show: "%{name}の詳細"
       sign_out: ログアウト
+      no_comments: "コメントはありません"
     pagination:
       first: '« 最初'
       last: '最後 »'
@@ -208,6 +226,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_error: "コメントを入力してください"
   layouts:
     application:
       menu: メニュー

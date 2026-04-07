@@ -48,6 +48,6 @@ class ReportsController < ApplicationController
   end
 
   def report_params
-    params.expect(report: %i[user_id title content])
+    params.expect(report: %i[title content])
   end
 end

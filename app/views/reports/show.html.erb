@@ -4,6 +4,10 @@
   <%= render @report %>
 </div>
 
+<% @report.mentioned_reports.each do |report| %>
+  <%= report.title %>
+<% end %>
+
 <%= render 'application/comments', commentable: @report %>
 
 <nav class="page-nav">

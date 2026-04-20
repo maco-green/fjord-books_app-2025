@@ -4,6 +4,7 @@
   <%= render @report %>
 </div>
 
+<p><%= t ('views.reports.mentioning_report') %></p>
 <% @report.mentioned_reports.order(id: :asc).each do |report| %>
   <%= link_to report.title, report_path(report) %>
 <% end %>

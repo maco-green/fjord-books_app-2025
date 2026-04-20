@@ -25,6 +25,7 @@ class Report < ApplicationRecord
 
   def update_mentions
     ActiveRecord::Base.transaction do
+      mentioning_mentions.destroy_all
       find_report_ids.each do |report_id|
         Mention.create(mentioning_report_id: id, mentioned_report_id: report_id)
       end

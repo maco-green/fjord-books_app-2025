@@ -4,7 +4,7 @@
   <%= render @report %>
 </div>
 
-<% @report.mentioned_reports.each do |report| %>
+<% @report.mentioned_reports.order(id: :asc).each do |report| %>
   <%= report.title %>
 <% end %>
 

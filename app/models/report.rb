@@ -23,8 +23,10 @@ class Report < ApplicationRecord
   end
 
   def update_mentions
-    find_report_ids.each do |report_id|
-      Mention.create(mentioning_report_id: id, mentioned_report_id: report_id)
+    ActiveRecord::Base.transaction do
+      find_report_ids.each do |report_id|
+        Mention.create(mentioning_report_id: id, mentioned_report_id: report_id)
+      end
     end
   end
 end

@@ -19,16 +19,19 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  def find_report_ids
-    content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
-  end
-
   def update_mentions
     ActiveRecord::Base.transaction do
+      save!
       mentioning_mentions.destroy_all
       find_report_ids.each do |report_id|
         Mention.create!(mentioning_report_id: id, mentioned_report_id: report_id)
       end
     end
+  end
+
+  private
+
+  def find_report_ids
+    content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
   end
 end

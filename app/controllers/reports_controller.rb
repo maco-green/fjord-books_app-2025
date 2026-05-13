@@ -8,7 +8,8 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = Report.find_by(id: params[:id])
+    redirect_to reports_path, alert: t('controllers.common.not_found', name: Report.model_name.human) unless @report
   end
 
   def new

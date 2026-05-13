@@ -24,6 +24,7 @@ class Report < ApplicationRecord
       save!
       mentioning_mentions.destroy_all
       find_report_ids.uniq.each do |report_id|
+        next unless Report.exists?(report_id)
         Mention.create!(mentioning_report_id: id, mentioned_report_id: report_id)
       end
     end

@@ -8,7 +8,8 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = Report.find_by(id: params[:id])
+    redirect_to reports_path, alert: t('controllers.common.not_found', name: Report.model_name.human) unless @report
   end
 
   def new
@@ -19,20 +20,18 @@ class ReportsController < ApplicationController
 
   def create
     @report = current_user.reports.new(report_params)
-
-    if @report.save
-      redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @report.update_mentions
+    redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
+  rescue ActiveRecord::RecordInvalid
+    render :new, status: :unprocessable_entity
   end
 
   def update
-    if @report.update(report_params)
-      redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @report.assign_attributes(report_params)
+    @report.update_mentions
+    redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
+  rescue ActiveRecord::RecordInvalid
+    render :edit, status: :unprocessable_entity
   end
 
   def destroy
@@ -48,6 +47,6 @@ class ReportsController < ApplicationController
   end
 
   def report_params
-    params.expect(report: %i[user_id title content])
+    params.expect(report: %i[title content])
   end
 end

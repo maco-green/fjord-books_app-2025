@@ -203,11 +203,14 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+    reports:
+      mentioning_report: 'この記事は以下の記事からリンクされています'
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      not_found: "%{name}が見つかりませんでした。"
   layouts:
     menu:
       menu: メニュー

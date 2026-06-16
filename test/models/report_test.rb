@@ -16,4 +16,10 @@ class ReportTest < ActiveSupport::TestCase
 
     assert_not report.editable?(user)
   end
+
+  test '作成日を返す' do
+    report = reports(:one)
+
+    assert_equal Date.new(2026, 6, 16), report.created_on
+  end
 end

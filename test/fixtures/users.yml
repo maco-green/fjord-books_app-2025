@@ -1,5 +1,6 @@
 one:
   email: one@example.com
+  name: namae
 
 two:
   email: two@example.com

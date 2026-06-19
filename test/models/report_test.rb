@@ -19,7 +19,8 @@ class ReportTest < ActiveSupport::TestCase
 
   test '作成日を返す' do
     report = reports(:one)
+    report.created_at = Time.zone.parse('2026-01-01 12:00:00')
 
-    assert_equal Date.new(2026, 6, 16), report.created_on
+    assert_equal Date.new(2026, 1, 1), report.created_on
   end
 end

@@ -23,4 +23,14 @@ class ReportTest < ActiveSupport::TestCase
 
     assert_equal Date.new(2026, 1, 1), report.created_on
   end
+
+  test '日報本文に含まれる日報URLをメンションとして保存する' do
+    mentioning_report = reports(:one)
+    mentioned_report = reports(:two)
+
+    mentioning_report.content = "http://localhost:3000/reports/#{mentioned_report.id}"
+    mentioning_report.save!
+
+    assert_includes mentioning_report.reload.mentioning_reports, mentioned_report
+  end
 end

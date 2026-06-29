@@ -2,11 +2,10 @@
 
 one:
   user: one
-  title: MyString
-  content: MyText
-  created_at: 2026-06-16 10:00:00
+  title: oneのタイトル
+  content: oneの内容
 
 two:
   user: two
-  title: MyString
-  content: MyText
+  title: twoのタイトル
+  content: twoの内容

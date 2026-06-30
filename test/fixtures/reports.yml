@@ -2,10 +2,20 @@
 
 one:
   user: one
-  title: MyString
-  content: MyText
+  title: oneのタイトル
+  content: oneの内容
 
 two:
   user: two
-  title: MyString
-  content: MyText
+  title: twoのタイトル
+  content: twoの内容
+
+three:
+  user: one
+  title: threeのタイトル
+  content: threeの内容
+
+four:
+  user: one
+  title: fourのタイトル
+  content: fourの内容
